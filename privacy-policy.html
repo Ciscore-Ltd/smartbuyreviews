@@ -4,54 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy – Smart Buy Reviews</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
-        header { background-color: #007bff; color: white; padding: 60px 20px; text-align: center; }
-        nav { background:#f0f0f0; padding:15px; text-align:center; }
-        nav a { margin:0 20px; font-weight:bold; color:#007bff; text-decoration:none; }
-        nav a:hover { text-decoration:underline; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        footer { background-color: #333; color: white; padding: 20px; margin-top: 50px; text-align: center; font-size: 0.9em; }
-        footer a { color: #fff; text-decoration: underline; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
-<body>
-    <header>
-        <h1>Privacy Policy</h1>
-    </header>
+<body class="min-h-screen">
+    <div class="relative">
+        <header class="relative overflow-hidden">
+            <div class="absolute inset-0 hero-panel"></div>
+            <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-10">
+                <nav class="flex flex-col gap-6 text-sm font-semibold uppercase tracking-[0.3em] text-slate-200 lg:flex-row lg:items-center lg:justify-between">
+                    <a class="text-2xl font-semibold normal-case text-white" href="/">Smart Buy Reviews</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/">Home</a>
+                        <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/about.html">About</a>
+                        <a class="rounded-full px-4 py-2 text-white transition hover:text-sky-200" href="/privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </nav>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-    </nav>
+                <div class="flex flex-col gap-6">
+                    <span class="badge inline-flex w-fit items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
+                        Privacy First
+                    </span>
+                    <h1 class="text-4xl font-semibold text-white sm:text-5xl">Your data stays safe and simple.</h1>
+                    <p class="max-w-2xl text-lg text-slate-200">
+                        We believe privacy should be clear and straightforward. Here is how Smart Buy Reviews protects your data.
+                    </p>
+                </div>
+            </div>
+        </header>
 
-    <div class="container">
-        <p><strong>Last updated: January 03, 2026</strong></p>
+        <main class="relative mx-auto w-full max-w-5xl px-6 pb-16">
+            <section class="content-card -mt-12 flex flex-col gap-6 p-8 text-slate-700">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Last updated: January 03, 2026</p>
 
-        <p>Smart Buy Reviews ("we", "our", or "us") operates the website https://smartbuyreviews.co.uk (the "Site"). This page informs you of our policies regarding the collection, use, and disclosure of personal information we receive from users of the Site.</p>
+                <div class="grid gap-6">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Information Collection and Use</h2>
+                        <p class="mt-2">We do not collect personal information unless you voluntarily provide it. We also do not use cookies for tracking at this time.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Log Data</h2>
+                        <p class="mt-2">Our hosting provider (GitHub Pages) may collect non-personal information like IP address, browser type, and pages visited for analytics.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Affiliate Disclosure</h2>
+                        <p class="mt-2">We participate in the Amazon EU Associates Programme and other affiliate networks. We may earn a commission at no extra cost to you.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Links to Other Sites</h2>
+                        <p class="mt-2">Our Site may link to other websites. We are not responsible for their privacy practices and encourage you to review their policies.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Changes to This Privacy Policy</h2>
+                        <p class="mt-2">We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-slate-900">Contact Us</h2>
+                        <p class="mt-2">If you have questions, please use the contact details on our About page.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <h2>Information Collection and Use</h2>
-        <p>We do not collect any personal information from visitors unless you voluntarily provide it. We do not use cookies for tracking purposes at this time.</p>
-
-        <h2>Log Data</h2>
-        <p>Like many site operators, our hosting provider (GitHub Pages) may collect non-personal information such as your IP address, browser type, and pages visited for analytical purposes only.</p>
-
-        <h2>Affiliate Disclosure</h2>
-        <p>Smart Buy Reviews is a participant in the Amazon EU Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn commissions by linking to Amazon.co.uk and affiliated sites. We may earn a small commission at no extra cost to you.</p>
-
-        <h2>Links to Other Sites</h2>
-        <p>Our Site contains links to other sites. We are not responsible for the privacy practices of those sites and advise you to review their policies.</p>
-
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have any questions, please use the contact details on our About page (coming soon).</p>
+        <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-300">
+            <div class="mx-auto flex w-full max-w-6xl flex-col gap-6">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <p class="text-lg font-semibold text-white">Smart Buy Reviews</p>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <a class="footer-link" href="/">Home</a>
+                        <a class="footer-link" href="/about.html">About</a>
+                        <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </div>
+                <p>&copy; 2026 Smart Buy Reviews. Privacy-forward shopping guidance.</p>
+            </div>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Smart Buy Reviews | <a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/privacy-policy.html">Privacy Policy</a></p>
-    </footer>
 </body>
 </html>

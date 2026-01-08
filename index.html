@@ -4,43 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Buy Reviews – Honest UK Product Guides & Deals</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
-        header { background-color: #007bff; color: white; padding: 60px 20px; text-align: center; }
-        h1 { font-size: 2.8em; margin: 0; }
-        nav { background:#f0f0f0; padding:15px; text-align:center; }
-        nav a { margin:0 20px; font-weight:bold; color:#007bff; text-decoration:none; }
-        nav a:hover { text-decoration:underline; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; text-align: center; line-height: 1.6; }
-        footer { background-color: #333; color: white; padding: 20px; margin-top: 50px; text-align: center; font-size: 0.9em; }
-        footer a { color: #fff; text-decoration: underline; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
-<body>
-    <header>
-        <h1>Smart Buy Reviews</h1>
-        <p>Independent, honest reviews of the best products in the UK</p>
-    </header>
+<body class="min-h-screen">
+    <div class="relative">
+        <header class="relative overflow-hidden">
+            <div class="absolute inset-0 hero-panel"></div>
+            <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-10">
+                <nav class="flex flex-col gap-6 text-sm font-semibold uppercase tracking-[0.3em] text-slate-200 lg:flex-row lg:items-center lg:justify-between">
+                    <a class="text-2xl font-semibold normal-case text-white" href="/">Smart Buy Reviews</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="rounded-full px-4 py-2 text-white transition hover:text-sky-200" href="/">Home</a>
+                        <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/about.html">About</a>
+                        <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </nav>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-    </nav>
+                <div class="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+                    <div class="flex flex-col gap-6">
+                        <span class="badge inline-flex w-fit items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
+                            UK Product Guides
+                        </span>
+                        <h1 class="text-4xl font-semibold text-white sm:text-5xl">Honest reviews. Smart UK deals. Zero fluff.</h1>
+                        <p class="max-w-xl text-lg text-slate-200">
+                            Smart Buy Reviews helps UK shoppers find standout tech, kitchen, and lifestyle products with expert research, price tracking, and concise recommendations.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a class="rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-slate-900 transition hover:-translate-y-0.5 hover:bg-sky-300" href="/about.html">
+                                Explore the mission
+                            </a>
+                            <a class="glass rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:-translate-y-0.5" href="/privacy-policy.html">
+                                Privacy promise
+                            </a>
+                        </div>
+                    </div>
 
-    <div class="container">
-        <p>Welcome! We're building a trusted source for UK shoppers looking for great deals on tech, kitchen gadgets, fitness gear, home essentials, and more.</p>
-        
-        <p>Our in-depth guides and reviews help you make smart buying decisions. All recommendations are based on real testing and research.</p>
-        
-        <p><strong>Coming soon in 2026:</strong> Top 10 lists, detailed comparisons, and exclusive deals.</p>
-        
-        <p>Check back soon for our first reviews!</p>
+                    <div class="glass flex flex-col gap-5 rounded-3xl p-6 text-sm text-slate-100">
+                        <h2 class="text-2xl font-semibold">Launching 2026</h2>
+                        <p>We are curating the first wave of UK-focused buying guides and deal trackers.</p>
+                        <ul class="flex flex-col gap-3 text-slate-200">
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-300"></span>Top 10 shortlists with real-world testing notes.</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-300"></span>Deal alerts and seasonal price history insights.</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-300"></span>Unbiased comparisons across tech, home, and wellness.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="relative mx-auto w-full max-w-5xl px-6 pb-16">
+            <section class="content-card -mt-12 grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr]">
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-3xl font-semibold text-slate-900">Built for confident, calm buying decisions.</h2>
+                    <p class="text-slate-700">
+                        Smart Buy Reviews is designed for busy UK shoppers who want the essentials fast. Every guide focuses on the products that truly deliver, backed by real testing notes and clear value comparisons.
+                    </p>
+                    <p class="text-slate-700">
+                        Expect short, actionable verdicts, clean visuals, and transparent affiliate disclosures on every page.
+                    </p>
+                </div>
+                <div class="rounded-3xl bg-slate-50 p-6">
+                    <h3 class="text-xl font-semibold text-slate-900">What you will see soon</h3>
+                    <div class="mt-4 flex flex-col gap-3 text-slate-700">
+                        <div class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm">
+                            <span>Curated product picks</span>
+                            <span class="text-sm font-semibold text-sky-500">Weekly</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm">
+                            <span>Deal intelligence updates</span>
+                            <span class="text-sm font-semibold text-sky-500">Monthly</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm">
+                            <span>New category launches</span>
+                            <span class="text-sm font-semibold text-sky-500">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-300">
+            <div class="mx-auto flex w-full max-w-6xl flex-col gap-6">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <p class="text-lg font-semibold text-white">Smart Buy Reviews</p>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <a class="footer-link" href="/">Home</a>
+                        <a class="footer-link" href="/about.html">About</a>
+                        <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </div>
+                <p>&copy; 2026 Smart Buy Reviews. Honest reviews and affiliate-friendly transparency.</p>
+            </div>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Smart Buy Reviews | <a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/privacy-policy.html">Privacy Policy</a></p>
-        <p><small>This site contains affiliate links. We may earn a commission if you purchase through them (at no extra cost to you).</small></p>
-    </footer>
 </body>
 </html>
