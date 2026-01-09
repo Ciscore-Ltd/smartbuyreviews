@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <link rel="stylesheet" href="/assets/tailwind.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-blue-600 text-white py-12 text-center">
+        <h1 class="text-4xl font-bold"><a href="/" class="hover:underline">Smart Buy Reviews</a></h1>
+        <p class="text-xl mt-2">Independent, honest reviews of the best products in the UK</p>
+    </header>
+
+    <nav class="bg-gray-200 py-4 text-center">
+        <a href="/" class="mx-4 font-medium hover:text-blue-600">Home</a>
+        <a href="/about.html" class="mx-4 font-medium hover:text-blue-600">About</a>
+        <a href="/privacy-policy.html" class="mx-4 font-medium hover:text-blue-600">Privacy Policy</a>
+        <!-- Language switcher placeholder -->
+        <select class="ml-8 p-2 rounded border">
+            <option>English</option>
+            <option>Français</option>
+            <option>Español</option>
+            <option>Deutsch</option>
+        </select>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-8 bg-white my-8 rounded-lg shadow-lg">
+        {{ARTICLE_CONTENT}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {{IMAGES}}
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <p>&copy; 2026 Smart Buy Reviews | Affiliate links may earn commission.</p>
+    </footer>
+</body>
+</html>
