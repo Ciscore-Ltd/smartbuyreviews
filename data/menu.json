@@ -1,59 +1,65 @@
 {
-    "site_root": "/",
-    "menu": [
-          {
-                  "label": "Home",
-                  "url": "/",
-                  "icon": "🏠"
-          },
-          {
-                  "label": "Reviews",
-                  "icon": "⭐",
-                  "children": [
-                            {
-                                        "label": "Beauty",
-                                        "category": "beauty",
-                                        "url": "/contents/regions/en/reviews/beauty/"
-                            },
-                            {
-                                        "label": "Bedding",
-                                        "category": "bedding",
-                                        "url": "/contents/regions/en/reviews/bedding/"
-                            },
-                            {
-                                        "label": "Audio",
-                                        "category": "audio",
-                                        "url": "/contents/regions/en/reviews/audio/"
-                            },
-                            {
-                                        "label": "Fitness",
-                                        "category": "fitness",
-                                        "url": "/contents/regions/en/reviews/fitness/"
-                            },
-                            {
-                                        "label": "Home & Garden",
-                                        "category": "home",
-                                        "url": "/contents/regions/en/reviews/home/"
-                            },
-                            {
-                                        "label": "Kitchen",
-                                        "category": "kitchen",
-                                        "url": "/contents/regions/en/reviews/kitchen/"
-                            },
-                            {
-                                        "label": "Tech",
-                                        "category": "tech",
-                                        "url": "/contents/regions/en/reviews/tech/"
-                            }
-                  ]
-          },
-          {
-                  "label": "About",
-                  "url": "/about.html"
-          },
-          {
-                  "label": "Privacy Policy",
-                  "url": "/privacy-policy.html"
-          }
-    ]
+      "regions": {
+              "en": {
+                        "label": "English",
+                        "site_root": "/",
+                        "menu": [
+                                    {
+                                                  "label": "Home",
+                                                  "url": "/",
+                                                  "icon": "🏠"
+                                    },
+                                    {
+                                                  "label": "Reviews",
+                                                  "icon": "⭐",
+                                                  "children": [
+                                                                  {
+                                                                                    "label": "Beauty",
+                                                                                    "category": "beauty",
+                                                                                    "url": "/contents/regions/en/reviews/beauty/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Bedding",
+                                                                                    "category": "bedding",
+                                                                                    "url": "/contents/regions/en/reviews/bedding/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Audio",
+                                                                                    "category": "audio",
+                                                                                    "url": "/contents/regions/en/reviews/audio/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Fitness",
+                                                                                    "category": "fitness",
+                                                                                    "url": "/contents/regions/en/reviews/fitness/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Home & Garden",
+                                                                                    "category": "home",
+                                                                                    "url": "/contents/regions/en/reviews/home/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Kitchen",
+                                                                                    "category": "kitchen",
+                                                                                    "url": "/contents/regions/en/reviews/kitchen/"
+                                                                  },
+                                                                  {
+                                                                                    "label": "Tech",
+                                                                                    "category": "tech",
+                                                                                    "url": "/contents/regions/en/reviews/tech/"
+                                                                  }
+                                                  ]
+                                    },
+                                    {
+                                                  "label": "About",
+                                                  "url": "/about.html"
+                                    },
+                                    {
+                                                  "label": "Privacy Policy",
+                                                  "url": "/privacy-policy.html"
+                                    }
+                        ]
+              }
+      },
+      "defaultRegion": "en"
 }
