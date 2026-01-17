@@ -9,79 +9,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-    .hero-panel {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-    }
-    .content-card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .badge {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      backdrop-filter: blur(10px);
-    }
-    .review-content h2 {
-      color: #667eea;
-      font-size: 1.875rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    .review-content p {
-      color: #4a5568;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .footer-link {
-      transition: color 0.2s;
-    }
-    .footer-link:hover {
-      color: #667eea;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
 <body class="min-h-screen">
   <div class="relative">
-    <nav class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex-shrink-0">
-            <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
-              Smart Buy Reviews
-            </a>
-          </div>
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
-            <a href="/about.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</a>
-            <a href="/privacy-policy.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Privacy Policy</a>
-            <select class="bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-              <option>English</option>
-              <option>Français</option>
-              <option>Español</option>
-              <option>Deutsch</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </nav>
     <header class="relative overflow-hidden">
       <div class="absolute inset-0 hero-panel"></div>
-      <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16">
+      <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-10">
+        <nav class="flex flex-col gap-6 text-sm font-semibold uppercase tracking-[0.3em] text-slate-200 lg:flex-row lg:items-center lg:justify-between">
+          <a class="text-2xl font-semibold normal-case text-white" href="/">Smart Buy Reviews</a>
+          <div class="flex flex-wrap gap-4">
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/">Home</a>
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/about.html">About</a>
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </nav>
         <div class="flex flex-col gap-6">
           <span class="badge inline-flex w-fit items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
             2026 Buying Guide
           </span>
-          <h1 class="text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">Best Products in Bedding UK 2026</h1>
+          <h1 class="text-4xl font-semibold text-white sm:text-5xl">Best Products in Bedding UK 2026</h1>
           <p class="max-w-2xl text-lg text-slate-200">Clear picks, real prices, and the features that matter.</p>
         </div>
       </div>
@@ -196,17 +143,17 @@
         </div>
       </section>
     </main>
-    <footer class="bg-gray-900 border-t border-gray-800 px-6 py-10 text-sm text-gray-400">
+    <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-300">
       <div class="mx-auto flex w-full max-w-6xl flex-col gap-6">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p class="text-lg font-semibold text-white">Smart Buy Reviews</p>
-          <div class="flex flex-wrap gap-6 text-sm">
-            <a class="footer-link hover:text-blue-400" href="/">Home</a>
-            <a class="footer-link hover:text-blue-400" href="/about.html">About</a>
-            <a class="footer-link hover:text-blue-400" href="/privacy-policy.html">Privacy Policy</a>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <a class="footer-link" href="/">Home</a>
+            <a class="footer-link" href="/about.html">About</a>
+            <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
           </div>
         </div>
-        <p class="text-gray-500">&copy; 2026 Smart Buy Reviews | Affiliate links may earn commission.</p>
+        <p>&copy; 2026 Smart Buy Reviews. Honest reviews and affiliate-friendly transparency.</p>
       </div>
     </footer>
   </div>
