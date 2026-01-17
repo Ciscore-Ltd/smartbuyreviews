@@ -31,7 +31,7 @@ jobs:
 <head>
 <meta charset="UTF-8">
 <title>Audio Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -47,7 +47,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Beauty Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -63,7 +63,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Fitness Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -79,7 +79,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Home Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -95,7 +95,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Kitchen Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -111,7 +111,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Tech Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -127,7 +127,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Test Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
@@ -143,7 +143,7 @@ EOF
 <head>
 <meta charset="UTF-8">
 <title>Bedding Reviews</title>
-<script src="https://cdn.tailwindcss.com"><\\/script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
 <nav class="bg-white border-b"><div class="max-w-6xl mx-auto px-4 py-4"><a href="/" class="text-xl font-bold text-blue-600">Smart Buy Reviews</a></div></nav>
