@@ -1,3 +1,114 @@
+/* ===========================================
+   Smart Buy Reviews - Global Component Styles
+   =========================================== */
+
+/* Body Background - Dark gradient for pages */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  min-height: 100vh;
+}
+
+/* Hero Panel - Header section background */
+.hero-panel {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+}
+
+/* Content Card - Main content container */
+.content-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge - Small tag/label styling */
+.badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Button - Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Link styling */
+.footer-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #38bdf8;
+}
+
+/* Review Content - Heading and paragraph colors */
+.review-content h2 {
+  color: #0ea5e9;
+}
+
+.review-content h3 {
+  color: #0284c7;
+}
+
+.review-content p {
+  color: #475569;
+}
+
+.review-content ul {
+  color: #475569;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.review-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Review Table Styling */
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.review-table th {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.review-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.review-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.review-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ===========================================
+   Dynamic Menu Styling - Horizontal Layout
+   =========================================== */
+
 /* Dynamic Menu Styling - Horizontal Layout */
 
 nav {
