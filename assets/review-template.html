@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}}</title>
-    <meta name="description" content="{{DESCRIPTION}}">
-    <link rel="stylesheet" href="/assets/tailwind.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <header class="bg-blue-600 text-white py-12 text-center">
-        <h1 class="text-4xl font-bold"><a href="/" class="hover:underline">Smart Buy Reviews</a></h1>
-        <p class="text-xl mt-2">Independent, honest reviews of the best products in the UK</p>
-    </header>
-
-    <nav class="bg-gray-200 py-4 text-center">
-        <a href="/" class="mx-4 font-medium hover:text-blue-600">Home</a>
-        <a href="/about.html" class="mx-4 font-medium hover:text-blue-600">About</a>
-        <a href="/privacy-policy.html" class="mx-4 font-medium hover:text-blue-600">Privacy Policy</a>
-        <!-- Language switcher placeholder -->
-        <select class="ml-8 p-2 rounded border">
-            <option>English</option>
-            <option>Français</option>
-            <option>Español</option>
-            <option>Deutsch</option>
-        </select>
-    </nav>
-
-    <main class="max-w-4xl mx-auto p-8 bg-white my-8 rounded-lg shadow-lg">
-        {{ARTICLE_CONTENT}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {{IMAGES}}
+<body class="min-h-screen">
+  <div class="relative">
+    <header class="relative overflow-hidden">
+      <div class="absolute inset-0 hero-panel"></div>
+      <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-10">
+        <nav class="flex flex-col gap-6 text-sm font-semibold uppercase tracking-[0.3em] text-slate-200 lg:flex-row lg:items-center lg:justify-between">
+          <a class="text-2xl font-semibold normal-case text-white" href="/">Smart Buy Reviews</a>
+          <div class="flex flex-wrap gap-4">
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/">Home</a>
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/about.html">About</a>
+            <a class="rounded-full px-4 py-2 text-slate-200 transition hover:text-sky-200" href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </nav>
+        <div class="flex flex-col gap-6">
+          <span class="badge inline-flex w-fit items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
+            {{BADGE}}
+          </span>
+          <h1 class="text-4xl font-semibold text-white sm:text-5xl">{{HERO_TITLE}}</h1>
+          <p class="max-w-2xl text-lg text-slate-200">{{HERO_SUBTITLE}}</p>
         </div>
+      </div>
+    </header>
+    <main class="relative mx-auto w-full max-w-5xl px-6 pb-16">
+      <section class="content-card -mt-12 p-8 md:p-12">
+        <div class="review-content">
+          {{ARTICLE_CONTENT}}
+          <div class="grid grid-cols-1 gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3">
+            {{IMAGES}}
+          </div>
+        </div>
+      </section>
     </main>
-
-    <footer class="bg-gray-800 text-white text-center py-8">
-        <p>&copy; 2026 Smart Buy Reviews | Affiliate links may earn commission.</p>
+    <footer class="border-t border-white/10 px-6 py-10 text-sm text-slate-300">
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-6">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-lg font-semibold text-white">Smart Buy Reviews</p>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <a class="footer-link" href="/">Home</a>
+            <a class="footer-link" href="/about.html">About</a>
+            <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+        <p>&copy; 2026 Smart Buy Reviews. Honest reviews and affiliate-friendly transparency.</p>
+      </div>
     </footer>
+  </div>
 </body>
 </html>
