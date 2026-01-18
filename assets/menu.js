@@ -1,13 +1,28 @@
 /**
- * Smart Navigation Menu - Simplified v3.0
- * Simple flat menu with Reviews dropdown listing all review pages
+ * Smart Navigation Menu v3.1
+ * Simple flat menu with Reviews dropdown and language switching
+ * URL structure: /regions/{lang}/reviews/{file}.html
  */
 class SmartNavigationMenu {
   constructor(options = {}) {
     this.menuContainerId = options.menuContainerId || 'dynamic-menu';
     this.menuDataUrl = options.menuDataUrl || '/data/menu.json';
     this.menuData = null;
+    this.currentLang = this.detectLanguage();
     this.init();
+  }
+
+  detectLanguage() {
+    // Check URL path first: /regions/en/reviews/...
+    const pathMatch = window.location.pathname.match(/\/regions\/([a-z]{2})\//);
+    if (pathMatch) return pathMatch[1];
+
+    // Check localStorage
+    const stored = localStorage.getItem('preferredLanguage');
+    if (stored) return stored;
+
+    // Default to English
+    return 'en';
   }
 
   init() {
@@ -34,6 +49,12 @@ class SmartNavigationMenu {
     this.attachEventListeners();
   }
 
+  // Adjust review URLs for current language
+  getLocalizedUrl(url) {
+    // Replace /regions/en/ with /regions/{currentLang}/
+    return url.replace(/\/regions\/[a-z]{2}\//, `/regions/${this.currentLang}/`);
+  }
+
   buildMenuHtml() {
     if (!this.menuData) return this.buildFallbackHtml();
 
@@ -55,8 +76,9 @@ class SmartNavigationMenu {
         <ul class="menu-submenu absolute top-full left-0 mt-2 bg-slate-800 rounded-lg shadow-xl py-2 min-w-[250px] hidden z-50">`;
 
       for (const review of reviews) {
+        const localizedUrl = this.getLocalizedUrl(review.url);
         html += `<li class="menu-submenu-item">
-          <a href="${review.url}" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors">${review.label}</a>
+          <a href="${localizedUrl}" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors">${review.label}</a>
         </li>`;
       }
 
@@ -79,16 +101,20 @@ class SmartNavigationMenu {
   }
 
   buildLanguageDropdown(languages) {
+    const currentLangData = languages.find(l => l.code === this.currentLang) || languages[0];
+
     let html = `<li class="menu-item menu-item--with-children relative ml-4">
       <button class="menu-link menu-link--parent text-white hover:text-slate-200 transition-colors flex items-center gap-1 border border-white/20 rounded px-3 py-1">
-        <span class="text-sm">EN</span>
+        <span class="text-sm">${currentLangData.flag} ${currentLangData.code.toUpperCase()}</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
       </button>
       <ul class="menu-submenu absolute top-full right-0 mt-2 bg-slate-800 rounded-lg shadow-xl py-2 min-w-[140px] hidden z-50">`;
 
     for (const lang of languages) {
+      const isActive = lang.code === this.currentLang;
+      const activeClass = isActive ? ' bg-slate-700' : '';
       html += `<li class="menu-submenu-item">
-        <a href="#" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors" data-lang="${lang.code}">${lang.flag} ${lang.label}</a>
+        <a href="#" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors${activeClass}" data-lang="${lang.code}">${lang.flag} ${lang.label}</a>
       </li>`;
     }
 
@@ -140,12 +166,27 @@ class SmartNavigationMenu {
     document.querySelectorAll('[data-lang]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
-        const newLang = e.target.dataset.lang;
-        localStorage.setItem('preferredLanguage', newLang);
-        // For now just show an alert - full language support would need more pages
-        alert(`Language preference saved: ${newLang}. Full multilingual support coming soon!`);
+        const newLang = el.dataset.lang;
+        this.switchLanguage(newLang);
       });
     });
+  }
+
+  switchLanguage(newLang) {
+    // Save preference
+    localStorage.setItem('preferredLanguage', newLang);
+
+    const currentPath = window.location.pathname;
+
+    // If on a region page, swap the language code
+    if (currentPath.includes('/regions/')) {
+      const newPath = currentPath.replace(/\/regions\/[a-z]{2}\//, `/regions/${newLang}/`);
+      window.location.href = newPath;
+    } else {
+      // On home/about/etc - just update preference and re-render menu
+      this.currentLang = newLang;
+      this.renderMenu();
+    }
   }
 
   renderFallbackMenu() {
