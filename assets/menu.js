@@ -52,7 +52,6 @@ class SmartNavigationMenu {
   buildMenuHtml() {
     if (!this.menuData) return this.buildFallbackHtml();
 
-    const reviews = this.menuData.reviews || [];
     const languages = this.menuData.languages || [];
 
     let html = '<nav class="flex items-center gap-6">';
@@ -60,23 +59,8 @@ class SmartNavigationMenu {
     // Home link
     html += '<a href="/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Home</a>';
 
-    // Reviews dropdown
-    if (reviews.length > 0) {
-      html += `<div class="relative group">
-        <button class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors flex items-center gap-1">
-          Reviews
-          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </button>
-        <div class="menu-dropdown absolute top-full right-0 pt-2 hidden z-50">
-          <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[260px]">`;
-
-      for (const review of reviews) {
-        const localizedUrl = this.getLocalizedUrl(review.url);
-        html += `<a href="${localizedUrl}" class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 text-sm no-underline transition-colors">${review.label}</a>`;
-      }
-
-      html += '</div></div></div>';
-    }
+    // Reviews link (direct to reviews index page)
+    html += `<a href="/regions/${this.currentLang}/reviews/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Reviews</a>`;
 
     // About link
     html += '<a href="/about.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">About</a>';

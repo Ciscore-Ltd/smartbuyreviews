@@ -1,8 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://smartbuyreviews.co.uk/</loc>
-    <lastmod>2026-01-11</lastmod>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/about.html</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/privacy-policy.html</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Reviews - AUTO-GENERATED SECTION START -->
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/joop-homme-edt-200ml.html</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/top-headphones-2026.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/top-air-fryers-2026.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/nivea-soft-cream-500ml-vs-nivea-creme-tin-400ml.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartbuyreviews.co.uk/regions/en/reviews/sample-wireless-earbuds.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Reviews - AUTO-GENERATED SECTION END -->
+
 </urlset>
