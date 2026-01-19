@@ -1,8 +1,7 @@
 /**
- * Smart Navigation Menu v3.3
- * Simple flat menu with Reviews dropdown and language switching
+ * Smart Navigation Menu v4.0
+ * Clean Minimal theme - light background styling
  * URL structure: /regions/{lang}/reviews/{file}.html
- * Fixed: dropdown stays open longer when moving mouse to submenu
  */
 class SmartNavigationMenu {
   constructor(options = {}) {
@@ -15,15 +14,10 @@ class SmartNavigationMenu {
   }
 
   detectLanguage() {
-    // Check URL path first: /regions/en/reviews/...
     const pathMatch = window.location.pathname.match(/\/regions\/([a-z]{2})\//);
     if (pathMatch) return pathMatch[1];
-
-    // Check localStorage
     const stored = localStorage.getItem('preferredLanguage');
     if (stored) return stored;
-
-    // Default to English
     return 'en';
   }
 
@@ -51,9 +45,7 @@ class SmartNavigationMenu {
     this.attachEventListeners();
   }
 
-  // Adjust review URLs for current language
   getLocalizedUrl(url) {
-    // Replace /regions/en/ with /regions/{currentLang}/
     return url.replace(/\/regions\/[a-z]{2}\//, `/regions/${this.currentLang}/`);
   }
 
@@ -63,137 +55,127 @@ class SmartNavigationMenu {
     const reviews = this.menuData.reviews || [];
     const languages = this.menuData.languages || [];
 
-    let html = '<ul class="menu-list flex flex-wrap items-center gap-4 lg:gap-6">';
+    let html = '<nav class="flex items-center gap-6">';
 
     // Home link
-    html += '<li class="menu-item"><a href="/" class="menu-link text-white hover:text-slate-200 transition-colors">Home</a></li>';
+    html += '<a href="/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Home</a>';
 
-    // Reviews dropdown (only if there are reviews)
+    // Reviews dropdown
     if (reviews.length > 0) {
-      html += `<li class="menu-item menu-item--with-children relative group">
-        <button class="menu-link menu-link--parent text-white hover:text-slate-200 transition-colors flex items-center gap-1 py-2">
+      html += `<div class="relative group">
+        <button class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors flex items-center gap-1">
           Reviews
           <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="menu-submenu-wrapper absolute top-full left-0 pt-1 hidden z-50">
-          <ul class="menu-submenu bg-slate-800 rounded-lg shadow-xl py-2 min-w-[280px]">`;
+        <div class="menu-dropdown absolute top-full right-0 pt-2 hidden z-50">
+          <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[260px]">`;
 
       for (const review of reviews) {
         const localizedUrl = this.getLocalizedUrl(review.url);
-        html += `<li class="menu-submenu-item">
-          <a href="${localizedUrl}" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors text-sm">${review.label}</a>
-        </li>`;
+        html += `<a href="${localizedUrl}" class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 text-sm no-underline transition-colors">${review.label}</a>`;
       }
 
-      html += '</ul></div></li>';
+      html += '</div></div></div>';
     }
 
     // About link
-    html += '<li class="menu-item"><a href="/about.html" class="menu-link text-white hover:text-slate-200 transition-colors">About</a></li>';
+    html += '<a href="/about.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">About</a>';
 
-    // Privacy Policy link
-    html += '<li class="menu-item"><a href="/privacy-policy.html" class="menu-link text-white hover:text-slate-200 transition-colors">Privacy Policy</a></li>';
-
-    // Language dropdown (if multiple languages)
+    // Language selector (simplified - just show current)
     if (languages.length > 1) {
       html += this.buildLanguageDropdown(languages);
     }
 
-    html += '</ul>';
+    html += '</nav>';
     return html;
   }
 
   buildLanguageDropdown(languages) {
     const currentLangData = languages.find(l => l.code === this.currentLang) || languages[0];
+    const flagEmoji = this.getCountryFlag(currentLangData.code);
 
-    let html = `<li class="menu-item menu-item--with-children relative group ml-4">
-      <button class="menu-link menu-link--parent text-white hover:text-slate-200 transition-colors flex items-center gap-1 border border-white/20 rounded px-3 py-1">
-        <span class="text-sm">${currentLangData.flag} ${currentLangData.code.toUpperCase()}</span>
-        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    let html = `<div class="relative group ml-2">
+      <button class="text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors flex items-center gap-1 px-2 py-1 rounded border border-gray-200 hover:border-gray-300">
+        <span>${flagEmoji}</span>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
       </button>
-      <div class="menu-submenu-wrapper absolute top-full right-0 pt-1 hidden z-50">
-        <ul class="menu-submenu bg-slate-800 rounded-lg shadow-xl py-2 min-w-[140px]">`;
+      <div class="menu-dropdown absolute top-full right-0 pt-2 hidden z-50">
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[140px]">`;
 
     for (const lang of languages) {
       const isActive = lang.code === this.currentLang;
-      const activeClass = isActive ? ' bg-slate-700' : '';
-      html += `<li class="menu-submenu-item">
-        <a href="#" class="menu-submenu-link block px-4 py-2 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors text-sm${activeClass}" data-lang="${lang.code}">${lang.flag} ${lang.label}</a>
-      </li>`;
+      const activeClass = isActive ? ' bg-gray-50 font-medium' : '';
+      const flag = this.getCountryFlag(lang.code);
+      html += `<a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 text-sm no-underline transition-colors${activeClass}" data-lang="${lang.code}">${flag} ${lang.label}</a>`;
     }
 
-    html += '</ul></div></li>';
+    html += '</div></div></div>';
     return html;
+  }
+
+  getCountryFlag(langCode) {
+    const flags = {
+      'en': '🇬🇧',
+      'de': '🇩🇪',
+      'es': '🇪🇸',
+      'fr': '🇫🇷',
+      'it': '🇮🇹',
+      'nl': '🇳🇱',
+      'pt': '🇵🇹'
+    };
+    return flags[langCode] || '🌐';
   }
 
   buildFallbackHtml() {
     return `
-      <ul class="menu-list flex flex-wrap items-center gap-4 lg:gap-6">
-        <li class="menu-item"><a href="/" class="menu-link text-white hover:text-slate-200">Home</a></li>
-        <li class="menu-item"><a href="/about.html" class="menu-link text-white hover:text-slate-200">About</a></li>
-        <li class="menu-item"><a href="/privacy-policy.html" class="menu-link text-white hover:text-slate-200">Privacy Policy</a></li>
-      </ul>
+      <nav class="flex items-center gap-6">
+        <a href="/" class="text-gray-600 hover:text-gray-900 text-sm font-medium no-underline">Home</a>
+        <a href="/about.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium no-underline">About</a>
+      </nav>
     `;
   }
 
   attachEventListeners() {
     const self = this;
 
-    document.querySelectorAll('.menu-item--with-children').forEach(item => {
-      const button = item.querySelector('.menu-link--parent');
-      const submenuWrapper = item.querySelector('.menu-submenu-wrapper');
+    document.querySelectorAll('.group').forEach(item => {
+      const button = item.querySelector('button');
+      const dropdown = item.querySelector('.menu-dropdown');
 
-      if (!button || !submenuWrapper) return;
+      if (!button || !dropdown) return;
 
-      // Show on hover (desktop)
       item.addEventListener('mouseenter', () => {
         if (self.closeTimeout) {
           clearTimeout(self.closeTimeout);
           self.closeTimeout = null;
         }
-        // Close other menus
-        document.querySelectorAll('.menu-submenu-wrapper').forEach(sw => {
-          if (sw !== submenuWrapper) sw.classList.add('hidden');
+        document.querySelectorAll('.menu-dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.add('hidden');
         });
-        submenuWrapper.classList.remove('hidden');
+        dropdown.classList.remove('hidden');
       });
 
-      // Hide on mouse leave with longer delay for easier selection
       item.addEventListener('mouseleave', () => {
         self.closeTimeout = setTimeout(() => {
-          submenuWrapper.classList.add('hidden');
-        }, 400);
+          dropdown.classList.add('hidden');
+        }, 300);
       });
 
-      // Also support click for mobile/touch
       button.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-
-        const isHidden = submenuWrapper.classList.contains('hidden');
-
-        // Close all other menus
-        document.querySelectorAll('.menu-submenu-wrapper').forEach(sw => {
-          sw.classList.add('hidden');
-        });
-
-        // Toggle this one
-        if (isHidden) {
-          submenuWrapper.classList.remove('hidden');
-        }
+        const isHidden = dropdown.classList.contains('hidden');
+        document.querySelectorAll('.menu-dropdown').forEach(d => d.classList.add('hidden'));
+        if (isHidden) dropdown.classList.remove('hidden');
       });
     });
 
-    // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.menu-item--with-children')) {
-        document.querySelectorAll('.menu-submenu-wrapper').forEach(sw => {
-          sw.classList.add('hidden');
-        });
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.menu-dropdown').forEach(d => d.classList.add('hidden'));
       }
     });
 
-    // Language switching
     document.querySelectorAll('[data-lang]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
@@ -204,17 +186,12 @@ class SmartNavigationMenu {
   }
 
   switchLanguage(newLang) {
-    // Save preference
     localStorage.setItem('preferredLanguage', newLang);
-
     const currentPath = window.location.pathname;
-
-    // If on a region page, swap the language code
     if (currentPath.includes('/regions/')) {
       const newPath = currentPath.replace(/\/regions\/[a-z]{2}\//, `/regions/${newLang}/`);
       window.location.href = newPath;
     } else {
-      // On home/about/etc - just update preference and re-render menu
       this.currentLang = newLang;
       this.renderMenu();
     }
@@ -228,11 +205,9 @@ class SmartNavigationMenu {
   }
 }
 
-// Initialize when DOM is ready
+// Initialize
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new SmartNavigationMenu();
-  });
+  document.addEventListener('DOMContentLoaded', () => new SmartNavigationMenu());
 } else {
   new SmartNavigationMenu();
 }
