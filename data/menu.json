@@ -6,11 +6,5 @@
     { "code": "fr", "label": "Francais", "flag": "FR" }
   ],
   "defaultLanguage": "en",
-  "reviews": [
-    { "label": "JOOP! Homme EDT 200ml", "url": "/regions/en/reviews/joop-homme-edt-200ml.html" },
-    { "label": "Top Headphones 2026", "url": "/regions/en/reviews/top-headphones-2026.html" },
-    { "label": "Top Air Fryers 2026", "url": "/regions/en/reviews/top-air-fryers-2026.html" },
-    { "label": "NIVEA Soft vs NIVEA Creme", "url": "/regions/en/reviews/nivea-soft-cream-500ml-vs-nivea-creme-tin-400ml.html" },
-    { "label": "Sample Wireless Earbuds", "url": "/regions/en/reviews/sample-wireless-earbuds.html" }
-  ]
+  "reviews": []
 }

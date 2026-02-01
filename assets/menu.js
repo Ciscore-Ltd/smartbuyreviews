@@ -53,6 +53,7 @@ class SmartNavigationMenu {
     if (!this.menuData) return this.buildFallbackHtml();
 
     const languages = this.menuData.languages || [];
+    const reviews = this.menuData.reviews || [];
 
     let html = '<nav class="flex items-center gap-6">';
 
@@ -60,7 +61,9 @@ class SmartNavigationMenu {
     html += '<a href="/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Home</a>';
 
     // Reviews link (direct to reviews index page)
-    html += `<a href="/regions/${this.currentLang}/reviews/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Reviews</a>`;
+    if (reviews.length > 0) {
+      html += `<a href="/regions/${this.currentLang}/reviews/" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">Reviews</a>`;
+    }
 
     // About link
     html += '<a href="/about.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors no-underline">About</a>';
